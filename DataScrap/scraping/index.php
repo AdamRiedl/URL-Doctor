@@ -1,21 +1,20 @@
 <?php
 
-use Symfony\Component\DomCrawler\Crawler;
 
+use GuzzleHttp\Client;
 
 require 'vendor/autoload.php';
 
 //$term = "Baroko";
-// URL
+
 $url = "https://www.plus500.com/cs/Instruments/CL";
-//textuju
 
 
 //i can use guzzle POST method if i must do some sort of FORM first
-$client = new \GuzzleHttp\Client();
+$client = new Client();
 // go get data from URL
-$response = $client->request('GET',$url);
-$html = (string) $response->getBody();
+$response = $client->request('GET', $url);
+$html = (string)$response->getBody();
 
 libxml_use_internal_errors(true);
 //print_r($html);
