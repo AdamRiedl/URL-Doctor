@@ -8,6 +8,7 @@ require 'vendor/autoload.php';
 //$term = "Baroko";
 // URL
 $url = "https://www.plus500.com/cs/Instruments/CL";
+//textuju
 
 
 //i can use guzzle POST method if i must do some sort of FORM first
