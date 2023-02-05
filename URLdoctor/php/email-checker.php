@@ -59,7 +59,7 @@ curl_close($curl);
 $result = json_decode($json, true);
 
 // Check to see if our query was successful.
-if(isset($result['success']) && $result['success'] === true) {
+if (isset($result['success']) && $result['success'] === true) {
   echo(json_encode($result));
 } else {
   header("Location: ../html/404.html");

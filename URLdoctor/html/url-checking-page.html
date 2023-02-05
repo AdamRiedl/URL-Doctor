@@ -55,7 +55,7 @@
         document.getElementById("listOf").innerHTML = "The domain from this URL is: " + "<div class='boldText'>" + obj.domain + "</div> " + "Ip address is: " + "<div class='boldText'>" + obj.ip_address + "</div> "
           + "Page size: " + "<div class='boldText'>" + obj.page_size + "</div> "
           + "Category: " + "<div class='boldText'>" + obj.category + "</div> "
-          + "Domain age: " + "<div class='boldText'>" + obj.domain_age.human +" "+ obj.domain_age.iso + "</div> " + "<br>";
+          + "Domain age: " + "<div class='boldText'>" + obj.domain_age.human + " " + obj.domain_age.iso + "</div> " + "<br>";
       } else {
         document.getElementById("invalid").innerHTML = "The URL IS unsafe with risk score at " + obj.risk_score;
       }
