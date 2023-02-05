@@ -1,0 +1,68 @@
+<html lang="en">
+
+<link rel="stylesheet" type="text/css" href="../css/styles.css">
+<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
+<head>
+  <title>
+    url-checker
+  </title>
+
+  <link rel="icon" href="../img/lock-solid.svg" type="image/x-icon">
+</head>
+<body>
+
+
+<ul>
+  <li><a class="active" href="../index.html">Home</a></li>
+  <li><a href="url-checking-page.html">URL-checker</a></li>
+  <li><a href="ip-checking-page.html">IP-checker</a></li>
+  <li><a href="email-checking-page.html">Email-checker</a></li>
+</ul>
+
+<div class="heading">
+  URL checker
+</div>
+
+<div class="normal_text">
+  This tool is for scanning URL addresses if they are malicious or not.
+</div>
+
+<form method="post" action="">
+
+  <div class="flex-container">
+    <input type="text" placeholder="Type malicious URL here" name="bad-url" required>
+  </div>
+  <div class="flex-container">
+    <input type="submit" value="Check">
+  </div>
+
+</form>
+<p class="valid" id="valid"></p>
+<p class="invalid" id="invalid"></p>
+<p class="normal_text" id="listOf"></p>
+
+
+</body>
+<script>
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function () {
+    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+      let response = xmlhttp.responseText;
+      let obj = JSON.parse(response);
+      if (obj.unsafe === false) {
+        document.getElementById("valid").innerHTML = "The URL IS safe with risk score at: " + obj.risk_score;
+        document.getElementById("listOf").innerHTML = "The domain from this URL is: " + "<div class='boldText'>" + obj.domain + "</div> " + "Ip address is: " + "<div class='boldText'>" + obj.ip_address + "</div> "
+          + "Page size: " + "<div class='boldText'>" + obj.page_size + "</div> "
+          + "Category: " + "<div class='boldText'>" + obj.category + "</div> "
+          + "Domain age: " + "<div class='boldText'>" + obj.domain_age.human +" "+ obj.domain_age.iso + "</div> " + "<br>";
+      } else {
+        document.getElementById("invalid").innerHTML = "The URL IS unsafe with risk score at " + obj.risk_score;
+      }
+    }
+  };
+  xmlhttp.open("POST", "../php/url-checker.php", true);
+  xmlhttp.send();
+</script>
+
+</html>

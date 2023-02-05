@@ -1,0 +1,136 @@
+body {
+  background-color: white;
+}
+
+table {
+  width: 75%;
+  border-collapse: collapse;
+  text-align: center;
+  box-sizing: border-box;
+  margin-top: 4em;
+}
+.invalid{
+  font-family: sans-serif;
+  font-size: 3em;
+  background-color: darkred;
+  text-align: center;
+  color: white;
+}
+
+.valid{
+  font-family: sans-serif;
+  font-size: 3em;
+  background-color: green;
+  text-align: center;
+  color: white;
+}
+
+td {
+  padding: 5px;
+  border-width: 3px;
+  border-color: #111111;
+  font-family: sans-serif;
+}
+
+h2 {
+  color: #f59e0b;
+}
+
+h3 {
+  font-weight: bold;
+}
+
+.boldText{
+  font-size: 1em;
+  font-weight: bold;
+  width: 100%;
+  font-family: sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fbbf24;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-family: sans-serif;
+
+}
+
+li a:hover {
+  background-color: #111;
+  color: white;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.heading {
+  font-size: 5em;
+  font-weight: bold;
+  text-align: center;
+  font-family: sans-serif;
+
+}
+
+
+.normal_text {
+  text-align: center;
+  font-size: 1.3em;
+  font-family: sans-serif;
+
+}
+
+.paragraphedText {
+  font-size: 1em;
+  font-family: sans-serif;
+  padding: 5px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+}
+
+input[type=text], select {
+
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 50%;
+  background-color: #fbbf24;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #f59e0b;
+}
+

@@ -1,0 +1,107 @@
+<html lang="en">
+
+<link rel="stylesheet" type="text/css" href="../css/styles.css">
+<script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+
+
+<head>
+  <title>
+    email-checker
+  </title>
+
+  <link rel="icon" href="../img/lock-solid.svg" type="image/x-icon">
+</head>
+<body>
+
+
+<ul>
+  <li><a class="active" href="../index.html">Home</a></li>
+  <li><a href="url-checking-page.html">URL-checker</a></li>
+  <li><a href="ip-checking-page.html">IP-checker</a></li>
+  <li><a href="email-checking-page.html">Email-checker</a></li>
+</ul>
+
+<div class="heading">
+  Email checker
+</div>
+
+<div class="normal_text">
+  This is checker for phony emails it can detect if email is honeypot or just scam email or if it contains some malware.
+</div>
+
+<form method="post" action="">
+
+      <label for="bad-url">
+        <div class="flex-container">
+        <input type="text" placeholder="Type malicious URL here" name="bad-url" id="bad-url">
+        </div>
+      </label>
+    <div class="flex-container">
+      <input type="submit" value="Check">
+    </div>
+
+</form>
+<p class="valid" id="valid"></p>
+<p class="invalid" id="invalid"></p>
+
+
+</body>
+<script>
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function () {
+    if(xmlhttp.readyState === 4 && xmlhttp.status === 200){
+      let response = xmlhttp.responseText;
+      let obj = JSON.parse( response );
+      if(obj.valid === true){
+        document.getElementById("valid").innerHTML = "The Email is valid with first name" + obj.first_name;
+        /*
+        {
+	"valid": true,
+	"timed_out": false,
+	"disposable": false,
+	"first_name": "Unknown",
+	"deliverability": "high",
+	"smtp_score": 3,
+	"overall_score": 4,
+	"catch_all": false,
+	"generic": false,
+	"common": true,
+	"dns_valid": true,
+	"honeypot": false,
+	"frequent_complainer": false,
+	"suspect": false,
+	"recent_abuse": false,
+	"fraud_score":25,
+	"leaked": false,
+	"suggested_domain": "N\/A",
+	"domain_velocity": "high",
+	"user_activity": "medium",
+	"associated_names":{ "status":"Enterprise Plus or higher required.","names":[] },
+	"associated_phone_numbers":{ "status":"Enterprise Plus or higher required.","phone_numbers":[] },
+	"first_seen": {
+		"human": "3 months ago",
+		"timestamp": 1568061634,
+		"iso": "2019-09-09T16:40:34-04:00"
+	},
+	"domain_age": {
+		"human": "3 months ago",
+		"timestamp": 1568061634,
+		"iso": "2019-09-09T16:40:34-04:00"
+	},
+	"success": true,
+	"spam_trap_score": "none",
+	"sanitized_email": "validated@example.com",
+	"request_id": "4JAer3sX6rF3PO"
+}
+         */
+      }else{
+        document.getElementById("invalid").innerHTML = "This Email is invalid " + obj.first_name;
+      }
+    }
+  };
+  xmlhttp.open("POST", "../php/email-checker.php", true);
+  xmlhttp.send();
+</script>
+
+
+</html>
