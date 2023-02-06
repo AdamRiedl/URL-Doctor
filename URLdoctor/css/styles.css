@@ -2,6 +2,7 @@ body {
   background-color: white;
 }
 
+/*table is my main way to display data*/
 table {
   width: 75%;
   border-collapse: collapse;
@@ -10,6 +11,7 @@ table {
   margin-top: 4em;
 }
 
+/*class for displaying INVALID or dangerous data*/
 .invalid {
   font-family: sans-serif;
   font-size: 3em;
@@ -18,6 +20,7 @@ table {
   color: white;
 }
 
+/*class for displaying VALID or safe data*/
 .valid {
   font-family: sans-serif;
   font-size: 3em;
@@ -26,6 +29,7 @@ table {
   color: white;
 }
 
+/* another part in displaying table == data */
 td {
   padding: 5px;
   border-width: 3px;
@@ -41,6 +45,7 @@ h3 {
   font-weight: bold;
 }
 
+/*just for bold and little bit bigger words*/
 .boldText {
   font-size: 1em;
   font-weight: bold;
@@ -110,6 +115,7 @@ li a:hover {
 
 }
 
+/*Submit and input text styling*/
 input[type=text], select {
 
   width: 50%;

@@ -13,10 +13,10 @@
 <body>
 
 
+<!-- my simple Navbar for routing around site -->
 <ul>
   <li><a class="active" href="../index.html">Home</a></li>
   <li><a href="url-checking-page.html">URL-checker</a></li>
-  <li><a href="ip-checking-page.html">IP-checker</a></li>
   <li><a href="email-checking-page.html">Email-checker</a></li>
 </ul>
 
@@ -28,10 +28,12 @@
   This tool is for scanning URL addresses if they are malicious or not.
 </div>
 
+
+<!-- form for loading URL string from user-->
 <form method="post" action="">
 
   <div class="flex-container">
-    <input type="text" placeholder="Type malicious URL here" name="bad-url" required>
+    <input type="text" placeholder="Type malicious URL here" name="bad-url" id="bad-url" required>
   </div>
   <div class="flex-container">
     <input type="submit" value="Check">
@@ -50,6 +52,7 @@
     if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
       let response = xmlhttp.responseText;
       let obj = JSON.parse(response);
+      //same principle as Email html but different properties
       if (obj.unsafe === false) {
         document.getElementById("valid").innerHTML = "The URL IS safe with risk score at: " + obj.risk_score;
         document.getElementById("listOf").innerHTML = "The domain from this URL is: " + "<div class='boldText'>" + obj.domain + "</div> " + "Ip address is: " + "<div class='boldText'>" + obj.ip_address + "</div> "

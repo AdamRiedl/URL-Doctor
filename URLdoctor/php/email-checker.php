@@ -3,6 +3,7 @@
 $key = 'StFdmKnRXwUUxoe3T069mQREhpFDEGcu';
 
 // The email you wish to validate.
+//this is just temporarily until there is input from User form
 $email = 'noreply@ipqualityscore.com';
 
 /*
@@ -58,9 +59,10 @@ curl_close($curl);
 // Decode the result into an array.
 $result = json_decode($json, true);
 
-// Check to see if our query was successful.
+// Check to see if our query was successful, if yes json_encode the results that JS can read them.
 if (isset($result['success']) && $result['success'] === true) {
   echo(json_encode($result));
 } else {
+  //if not throw 404
   header("Location: ../html/404.html");
 }

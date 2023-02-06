@@ -13,11 +13,11 @@
 </head>
 <body>
 
+<!-- my simple Navbar for routing around site -->
 
 <ul>
   <li><a class="active" href="../index.html">Home</a></li>
   <li><a href="url-checking-page.html">URL-checker</a></li>
-  <li><a href="ip-checking-page.html">IP-checker</a></li>
   <li><a href="email-checking-page.html">Email-checker</a></li>
 </ul>
 
@@ -31,14 +31,15 @@
 
 <form method="post" action="">
 
-      <label for="bad-url">
-        <div class="flex-container">
-        <input type="text" placeholder="Type malicious URL here" name="bad-url" id="bad-url">
-        </div>
-      </label>
-    <div class="flex-container">
-      <input type="submit" value="Check">
-    </div>
+  <div class="flex-container">
+
+    <input type="text" placeholder="Type malicious URL here" name="bad-url" id="bad-url">
+
+  </div>
+
+  <div class="flex-container">
+    <input type="submit" value="Check">
+  </div>
 
 </form>
 <p class="valid" id="valid"></p>
@@ -46,16 +47,23 @@
 
 
 </body>
+<!-- Script for receiving and displaying data that are created at PHP server-->
 <script>
+
+  //using XMLHTTPRequest for getting the data from PHP to Javascript
   xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function () {
-    if(xmlhttp.readyState === 4 && xmlhttp.status === 200){
+    //ready state 4 means successfully received and status 200 for OK
+    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+      // just getting the response text
       let response = xmlhttp.responseText;
-      let obj = JSON.parse( response );
-      if(obj.valid === true){
+      // parsing the JSON to data that I can work with in JS
+      let obj = JSON.parse(response);
+      //valid is property of result json from the ipquality API it means that fraund property is false
+      if (obj.valid === true) {
         document.getElementById("valid").innerHTML = "The Email is valid with first name" + obj.first_name;
 
-      }else{
+      } else {
         document.getElementById("invalid").innerHTML = "This Email is invalid " + obj.first_name;
       }
     }

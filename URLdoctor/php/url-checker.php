@@ -1,5 +1,7 @@
 <?php
 
+
+//this is just temporarily until there is input from User form
 $URL = "https://www.google.com";
 // Your API Key.
 
@@ -43,6 +45,7 @@ curl_close($curl);
 // Decode the result into an array.
 $result = json_decode($json, true);
 
+// Check to see if our query was successful, if yes json_encode the results that JS can read them.
 if (isset($result['success']) || $result['success'] === true) {
   echo(json_encode($result));
 } else {

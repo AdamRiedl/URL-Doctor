@@ -1,0 +1,6 @@
+Cely projekt byl jako napad a challenge abych otestoval svoje schopnosti v takovem "fullstack" duchu. Je to delano na Ubuntu tim padem jsou tam upravy cest do directories pro obrazky,soubory atd..
+Stranka funguje tak ze uzivatel zada do Formu URL nebo Email a potom se zavola PHP skript ktery resi veskerou praci s daty a volani API, ktere dany pozadavek kontroluje a vraci JSON s informacemi.
+Nasledne se pres json_encode poslou do JS ktere (pomoci XMLHTTP a parasovani JSONu) data v HTML vypise. Cely projekt by se dal udelat mnohem lepe pri zapojeni REACTU,VUE atd... pro mnohem jednodussi praci s daty na frontendu, ale zase na druhou stranu nyni vidim nejake svoje slabe
+stranky ktere se muzou zdokonalit. Pokud byste mi chteli dat jakoukoliv radu ohledne designu backendu stranky budu jen rad.
+
+Projekt mi prijde jako zajimavy napad a i jeho realizace me dost bavila tudiz se bude nadale postupne zdokonalovat abych ho tak nejak mohl spojit se svym ucenim Web developmentu.
